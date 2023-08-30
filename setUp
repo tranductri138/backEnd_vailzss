@@ -1,0 +1,5 @@
+step 1 : setUp docker
+mo port
+
+
+link url vi du  MONGODB_URI=mongodb://localhost:27017/SampleDB
