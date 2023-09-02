@@ -1,9 +1,10 @@
 import {compare, genSalt, hash} from "bcrypt"
 import jwt from "jsonwebtoken"
 import {createRepo, findOneRepo} from "../dao/user.repository.js";
+import {storeToRedis} from "../cache/caching.js";
 
 
-const PREFIX = 'AUTH_LOGIN'
+const PREFIX = ' [AUTH] LOGIN'
 /* REGISTER USER */
 export const register = async (req, res) => {
     try {
@@ -56,7 +57,7 @@ export const login = async (req, res) => {
 
         delete user.password
 
-        console.log(`${PREFIX}| User: ${user}`)
+        console.log(`${PREFIX}| User: ${JSON.stringify(user)}`)
         res.status(200).json({token, user})
     } catch (err) {
         res.status(500).json({error: err.message})
