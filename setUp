@@ -3,3 +3,13 @@ mo port
 
 
 link url vi du  MONGODB_URI=mongodb://localhost:27017/SampleDB
+
+nick =
+{   "firstName" : "trisdepzai",
+         "lastName" : "lastName",
+         "picturePath" : "friends",
+         "location" : "ha noi",
+         "occupation" : "ki su",
+         "email" : "trisdepzai@ttt.com" ,
+         "password": "pass1"
+     }
