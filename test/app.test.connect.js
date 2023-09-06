@@ -11,7 +11,6 @@ export const connectMongo = async () => {
     await mongoose.connect(linkMongoose)
 }
 
-
 export const connectRedis = async () => {
     const linkRedis = process.env.REDIS_URL
     const client = createClient({
@@ -20,5 +19,4 @@ export const connectRedis = async () => {
     client.on('error', err => console.log('Redis Client Error', err));
     await client.connect();
     return client
-    // await client.disconnect();
 }

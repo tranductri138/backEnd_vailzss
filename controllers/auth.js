@@ -1,7 +1,6 @@
 import {compare, genSalt, hash} from "bcrypt"
 import jwt from "jsonwebtoken"
 import {createRepo, findOneRepo} from "../dao/user.repository.js";
-import {storeToRedis} from "../cache/caching.js";
 
 
 const PREFIX = ' [AUTH] LOGIN'

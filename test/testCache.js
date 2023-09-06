@@ -1,7 +1,7 @@
-import {storeToRedis} from "../cache/caching.js";
+import {storeInRedis} from "../service/cache/caching.js";
 
 
 const run = async () => {
-    await storeToRedis('haa', 'aaa')
+    await storeInRedis('haa', 'aaa')
 }
 setTimeout(run, 1)
