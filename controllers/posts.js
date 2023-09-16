@@ -5,7 +5,7 @@ import User from "../models/User.js";
 export const createPost = async (req, res) => {
   try {
     const { userId, description, picturePath } = req.body;
-    const user = await User.findById(userId);
+    const user = await User.findOne({ _id : userId});
     const newPost = new Post({
       userId,
       firstName: user.firstName,
@@ -46,11 +46,13 @@ export const getUserPosts = async (req, res) => {
   }
 };
 
+
 /* UPDATE */
 export const likePost = async (req, res) => {
   try {
     const { id } = req.params;
     const { userId } = req.body;
+
     const post = await Post.findById(id);
     const isLiked = post.likes.get(userId);
 

@@ -5,11 +5,11 @@ const id = "64f0bba517300447c51d441c"
 
 const addFriends = async () => {
     // find lean() === object | ko lean() === model
-    const update = await User.updateOne(
-        { _id : '64f0a80a83da0dd8bc746143'}
-        ,{
-        $push: { friends: id}
-    })
+    const update = await User.findOneAndUpdate(
+        {_id: '64f0c4f99b953c84a71a26d4'}
+        , {
+            $set: {impressions: 2231}
+        }, {new: true})
     console.log(update)
 }
 
